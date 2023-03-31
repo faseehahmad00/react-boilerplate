@@ -20,6 +20,6 @@
 > Customizing SWR
 >
 > * SWR is configured globally in main.tsx
-> >To Customizing SWR
+> * To Customizing SWR
 Navigate to main.tsx file
 update options in SWRConfig according to project demand.
