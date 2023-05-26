@@ -10,6 +10,12 @@
 >Axios
 >
 >SWR
+>
+>react-toastify
+>
+> eslint
+> 
+> PWA
 
 
 > Building and Development
