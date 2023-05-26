@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Index from './pages/Index'
 import Todos from "./pages/Todos";
-import axios from "axios";
+import axios from "./utils/axios";
 
 import {
   createBrowserRouter,

@@ -20,7 +20,6 @@ function Todos() {
       {isLoading && <h1>LOADING....</h1>}
       {data && todos}
       {error && <h1>DATA ERROR OCCURRED</h1>}
-      <h1 className="text-3xl font-bold underline text-center text-red-300">Users</h1>
     </>
   )
 }
