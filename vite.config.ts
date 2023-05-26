@@ -1,14 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
+import eslint from 'vite-plugin-eslint';
+
 export default defineConfig({
   plugins: [
+    eslint(),
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        id:"/",
+        id: '/',
         name: 'Test',
         short_name: 'Test',
         theme_color: '#000000',
@@ -27,4 +30,4 @@ export default defineConfig({
       },
     }),
   ],
-})
+});

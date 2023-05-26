@@ -1,23 +1,21 @@
-import useSWR from 'swr'
-import {todo} from "./types";
-import { useEffect } from "react";
-import showNotification from "../../utils/showNotification";
+import React, { useEffect } from 'react';
+import useSWR from 'swr';
+import { todo } from './types';
+import showNotification from '../../utils/showNotification';
 
 function Todos() {
-  const {data, error, isLoading} = useSWR('https://dummyjson.com/todos');
+  const { data, error, isLoading } = useSWR('https://dummyjson.com/todos');
 
   useEffect(() => {
-    showNotification('info', 'This is how notifications would display')
-  },[])
+    showNotification('info', 'This is how notifications would display');
+  }, []);
 
-  const todos = data?.todos?.map((t: todo, k: number) => {
-    return (
-        <div key={k} className="flex justify-center items-center">
-          <h1 className="text-xl flex-[1] p-2">{t.id}</h1>
-          <p className="text-blue-600 flex-[9]  underline ">{t.todo}</p>
-        </div>
-    )
-  })
+  const todos = data?.todos?.map((t: todo) => (
+    <div key={t.id} className="flex justify-center items-center">
+      <h1 className="text-xl flex-[1] p-2">{t.id}</h1>
+      <p className="text-blue-600 flex-[9]  underline ">{t.todo}</p>
+    </div>
+  ));
 
   return (
     <>
@@ -26,7 +24,7 @@ function Todos() {
       {data && todos}
       {error && <h1>DATA ERROR OCCURRED</h1>}
     </>
-  )
+  );
 }
 
 export default Todos;
