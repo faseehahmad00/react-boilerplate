@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import Index from './pages/Index'
 import Todos from "./pages/Todos";
 import axios from "./utils/axios";
+import { ToastContainer } from 'react-toastify'
 
 import {
   createBrowserRouter,
@@ -27,6 +28,7 @@ const fetcher = (url:string) => axios.get(url).then(res => res.data)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <ToastContainer/>
     <SWRConfig
       value={{
         refreshInterval: 3000,

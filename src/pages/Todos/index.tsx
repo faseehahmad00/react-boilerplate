@@ -1,16 +1,21 @@
 import useSWR from 'swr'
 import {todo} from "./types";
+import { useEffect } from "react";
+import showNotification from "../../utils/showNotification";
 
 function Todos() {
   const {data, error, isLoading} = useSWR('https://dummyjson.com/todos');
-  const todos = data?.todos?.map((t: todo) => {
+
+  useEffect(() => {
+    showNotification('info', 'This is how notifications would display')
+  },[])
+
+  const todos = data?.todos?.map((t: todo, k: number) => {
     return (
-      <>
-        <div className="flex justify-center items-center">
+        <div key={k} className="flex justify-center items-center">
           <h1 className="text-xl flex-[1] p-2">{t.id}</h1>
           <p className="text-blue-600 flex-[9]  underline ">{t.todo}</p>
         </div>
-      </>
     )
   })
 
